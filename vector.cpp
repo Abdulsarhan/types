@@ -123,6 +123,132 @@ std::ostream& operator<<(std::ostream& stream, const vec4& rhs) {
     return stream << "(" << rhs.x << ", " << rhs.y << ", " << rhs.z << ", " << rhs.w << ")";
 }
 
+class ivec2 {
+public:
+    union {
+        struct { int x, y; };
+        struct { int r, g; };
+    };
+
+    ivec2(int x, int y)
+        : x(x), y(y) {
+    }
+
+    ~ivec2() = default;
+
+    /* VECTOR - VECTOR OPERATIONS */
+
+    ivec2 operator+(const ivec2 rhs) const { return ivec2(x + rhs.x, y + rhs.y); }
+    ivec2 operator-(const ivec2 rhs) const { return ivec2(x - rhs.x, y - rhs.y); }
+    ivec2 operator*(const ivec2 rhs) const { return ivec2(x * rhs.x, y * rhs.y); }
+    ivec2 operator/(const ivec2 rhs) const { return ivec2(x / rhs.x, y / rhs.y); }
+
+    ivec2& operator+=(const ivec2 rhs) { x += rhs.x; y += rhs.y; return *this; }
+    ivec2& operator-=(const ivec2 rhs) { x -= rhs.x; y -= rhs.y; return *this; }
+    ivec2& operator*=(const ivec2 rhs) { x *= rhs.x; y *= rhs.y; return *this; }
+    ivec2& operator/=(const ivec2 rhs) { x /= rhs.x; y /= rhs.y; return *this; }
+
+    /* VECTOR - SCALAR OPERATIONS */
+
+    ivec2 operator+(const int rhs) const { return ivec2(x + rhs, y + rhs); }
+    ivec2 operator-(const int rhs) const { return ivec2(x - rhs, y - rhs); }
+    ivec2 operator*(const int rhs) const { return ivec2(x * rhs, y * rhs); }
+    ivec2 operator/(const int rhs) const { return ivec2(x / rhs, y / rhs); }
+
+    ivec2& operator+=(const int rhs) { x += rhs; y += rhs; return *this; }
+    ivec2& operator-=(const int rhs) { x -= rhs; y -= rhs; return *this; }
+    ivec2& operator*=(const int rhs) { x *= rhs; y *= rhs; return *this; }
+    ivec2& operator/=(const int rhs) { x /= rhs; y /= rhs; return *this; }
+};
+
+std::ostream& operator<<(std::ostream& stream, const ivec2& rhs) {
+    return stream << "(" << rhs.x << ", " << rhs.y << ")";
+}
+
+class ivec3 {
+public:
+    union {
+        struct { int x, y, z; };
+        struct { int r, g, b; };
+    };
+
+    ivec3(int x, int y, int z)
+        : x(x), y(y), z(z) {
+    }
+
+    ~ivec3() = default;
+
+    /* VECTOR - VECTOR OPERATIONS. */
+
+    ivec3 operator+(const ivec3 rhs) const { return ivec3(x + rhs.x, y + rhs.y, z + rhs.z); }
+    ivec3 operator-(const ivec3 rhs) const { return ivec3(x - rhs.x, y - rhs.y, z - rhs.z); }
+    ivec3 operator*(const ivec3 rhs) const { return ivec3(x * rhs.x, y * rhs.y, z * rhs.z); }
+    ivec3 operator/(const ivec3 rhs) const { return ivec3(x / rhs.x, y / rhs.y, z / rhs.z); }
+
+    ivec3& operator+=(const ivec3 rhs) { x += rhs.x; y += rhs.y; z += rhs.z; return *this; }
+    ivec3& operator-=(const ivec3 rhs) { x -= rhs.x; y -= rhs.y; z -= rhs.z; return *this; }
+    ivec3& operator*=(const ivec3 rhs) { x *= rhs.x; y *= rhs.y; z *= rhs.z; return *this; }
+    ivec3& operator/=(const ivec3 rhs) { x /= rhs.x; y /= rhs.y; z /= rhs.z; return *this; }
+
+    /* VECTOR - SCALAR OPERATIONS */
+
+    ivec3 operator+(const int rhs) const { return ivec3(x + rhs, y + rhs, z + rhs); }
+    ivec3 operator-(const int rhs) const { return ivec3(x - rhs, y - rhs, z - rhs); }
+    ivec3 operator*(const int rhs) const { return ivec3(x * rhs, y * rhs, z * rhs); }
+    ivec3 operator/(const int rhs) const { return ivec3(x / rhs, y / rhs, z / rhs); }
+
+    ivec3& operator+=(const int rhs) { x += rhs; y += rhs; z += rhs; return *this; }
+    ivec3& operator-=(const int rhs) { x -= rhs; y -= rhs; z -= rhs; return *this; }
+    ivec3& operator*=(const int rhs) { x *= rhs; y *= rhs; z *= rhs; return *this; }
+    ivec3& operator/=(const int rhs) { x /= rhs; y /= rhs; z /= rhs; return *this; }
+};
+
+std::ostream& operator<<(std::ostream& stream, const ivec3& rhs) {
+    return stream << "(" << rhs.x << ", " << rhs.y << ", " << rhs.z << ")";
+}
+
+class ivec4 {
+public:
+    union {
+        struct { int x, y, z, w; };
+        struct { int r, g, b, a; };
+    };
+
+    ivec4(int x, int y, int z, int w)
+        : x(x), y(y), z(z), w(w) {
+    }
+
+    ~ivec4() = default;
+
+    /* VECTOR - VECTOR OPERATIONS. */
+
+    ivec4 operator+(const ivec4 rhs) const { return ivec4(x + rhs.x, y + rhs.y, z + rhs.z, w + rhs.w); }
+    ivec4 operator-(const ivec4 rhs) const { return ivec4(x - rhs.x, y - rhs.y, z - rhs.z, w - rhs.w); }
+    ivec4 operator*(const ivec4 rhs) const { return ivec4(x * rhs.x, y * rhs.y, z * rhs.z, w * rhs.w); }
+    ivec4 operator/(const ivec4 rhs) const { return ivec4(x / rhs.x, y / rhs.y, z / rhs.z, w / rhs.w); }
+
+    ivec4& operator+=(const ivec4 rhs) { x += rhs.x; y += rhs.y; z += rhs.z; w += rhs.w; return *this; }
+    ivec4& operator-=(const ivec4 rhs) { x -= rhs.x; y -= rhs.y; z -= rhs.z; w -= rhs.w; return *this; }
+    ivec4& operator*=(const ivec4 rhs) { x *= rhs.x; y *= rhs.y; z *= rhs.z; w *= rhs.w; return *this; }
+    ivec4& operator/=(const ivec4 rhs) { x /= rhs.x; y /= rhs.y; z /= rhs.z; w /= rhs.w; return *this; }
+
+    /* VECTOR - SCALAR OPERATIONS */
+
+    ivec4 operator+(const int rhs) const { return ivec4(x + rhs, y + rhs, z + rhs, w + rhs); }
+    ivec4 operator-(const int rhs) const { return ivec4(x - rhs, y - rhs, z - rhs, w - rhs); }
+    ivec4 operator*(const int rhs) const { return ivec4(x * rhs, y * rhs, z * rhs, w * rhs); }
+    ivec4 operator/(const int rhs) const { return ivec4(x / rhs, y / rhs, z / rhs, w / rhs); }
+
+    ivec4& operator+=(const int rhs) { x += rhs; y += rhs; z += rhs; w += rhs; return *this; }
+    ivec4& operator-=(const int rhs) { x -= rhs; y -= rhs; z -= rhs; w -= rhs; return *this; }
+    ivec4& operator*=(const int rhs) { x *= rhs; y *= rhs; z *= rhs; w *= rhs; return *this; }
+    ivec4& operator/=(const int rhs) { x /= rhs; y /= rhs; z /= rhs; w /= rhs; return *this; }
+};
+
+std::ostream& operator<<(std::ostream& stream, const ivec4& rhs) {
+    return stream << "(" << rhs.x << ", " << rhs.y << ", " << rhs.z << ", " << rhs.w << ")";
+}
+
 int main ()
 {
     vec4 pos1 = vec4(1.0f,1.0f,2.0f,3.0f);
